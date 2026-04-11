@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+body {
+    background-color: rgb(5, 16, 26);
+    color: rgb(220, 237, 236)
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 1500px;
+    margin: auto;
+}
+
+.header {
+    display: flex;
+    background-color: rgb(15, 23, 40);
+    padding: 30px;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}

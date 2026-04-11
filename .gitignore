@@ -1,0 +1,14 @@
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.log
+*.dll
+*.exe
+*.pdb
+**/WebView2/
+**/EBWebView/
+.DS_Store
+Thumbs.db
