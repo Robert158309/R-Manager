@@ -5,11 +5,18 @@ namespace R_Manager
         public Form1()
         {
             InitializeComponent();
+
+            this.MinimumSize = new Size(890, 590);
         }
 
         private async void Form1_Load(object sender, EventArgs e)
         {
             await webView21.EnsureCoreWebView2Async();
+
+            webView21.CoreWebView2.Settings.IsZoomControlEnabled = false;
+            webView21.CoreWebView2.Settings.IsPinchZoomEnabled = false;
+            webView21.ZoomFactor = 1.0;
+            webView21.CoreWebView2.Settings.IsSwipeNavigationEnabled = false;
 
             var basePath = Directory.GetParent(Application.StartupPath).Parent.Parent.Parent.FullName;
 

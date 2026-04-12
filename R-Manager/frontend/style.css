@@ -1,24 +1,119 @@
 @charset "UTF-8";
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: rgb(5, 16, 26);
-    color: rgb(220, 237, 236)
+    color: rgb(220, 237, 236);
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    overflow: auto;
 }
 
-.container {
+html, body {
+    overscroll-behavior: none;
+}
+
+.app {
     width: 100%;
     max-width: 1500px;
     margin: auto;
 }
 
-.header {
+.content {
+    width: 100%;
     display: flex;
-    background-color: rgb(15, 23, 40);
+    align-items: stretch;
+    height: calc(100vh - 60px);
+}
+
+#navbar {
+    width: 220px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(5, 16, 26);
+    overflow-y: auto;
+    border-radius: 10px;
+}
+
+    #navbar::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    #navbar::-webkit-scrollbar-track {
+        background: rgb(5, 16, 26);
+    }
+
+    #navbar::-webkit-scrollbar-thumb {
+        background: rgb(30, 40, 70);
+        border-radius: 10px;
+    }
+
+    #navbar::-webkit-scrollbar-thumb:hover {
+        background: rgb(40, 50, 90);
+    }
+
+#user {
+    background-color: rgb(58, 72, 114);
+    padding: 7px;
+    border: 1px solid rgb(5, 16, 26);
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    font-size: 28px;
+}
+
+#name {
+    font-size: 20px;
+    text-align: center;
+}
+
+.btns {
+    width: 100%;
+    min-height: 100px;
+    padding: 20px;
+    font-size: 20px;
+    background-color: rgb(30, 40, 70);
+    color: rgb(220, 237, 236);
+    cursor: pointer;
+    text-align: left;
+    border: 1px solid rgb(5, 16, 26);
+}
+
+.btns {
+    transition: 0.3s ease;
+}
+
+.btns:hover {
+    background-color: rgb(40, 50, 90);
+    border-left: 3px solid rgb(80, 200, 255);
+}
+
+#right {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(56, 107, 155);
     padding: 30px;
-    gap: 20px;
     flex-wrap: wrap;
-    margin-top: 30px;
+    border: 1px solid rgb(5, 16, 26);
+    border-radius: 10px;
+}
+
+footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    justify-content: center;
+    background-color: rgb(5, 16, 26);
+    color: rgb(220, 237, 236);
+    font-size: 14px;
 }
