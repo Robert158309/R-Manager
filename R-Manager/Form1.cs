@@ -10,6 +10,8 @@ namespace R_Manager
 
             this.Load += Form1_Load;
 
+            this.WindowState = FormWindowState.Maximized;
+
         }
 
         private async void Form1_Load(object sender, EventArgs e)
@@ -21,7 +23,7 @@ namespace R_Manager
             var basePath = Directory.GetParent(Application.StartupPath)
                 .Parent.Parent.Parent.FullName;
 
-            var path = Path.Combine(basePath, "frontend", "index.html");
+            var path = Path.Combine(basePath, "frontend", "login.html");
 
             webView21.CoreWebView2.Navigate(new Uri(path).AbsoluteUri);
 
@@ -41,30 +43,51 @@ namespace R_Manager
 
         private void CoreWebView2_WebMessageReceived(object sender, Microsoft.Web.WebView2.Core.CoreWebView2WebMessageReceivedEventArgs e)
         {
-            string view = e.TryGetWebMessageAsString();
+            string message = e.WebMessageAsJson;
 
-            var basePath = Directory.GetParent(Application.StartupPath)
-                .Parent.Parent.Parent.FullName;
+            // LOGIN 
+            var data = System.Text.Json.JsonDocument.Parse(message);
+            string type = data.RootElement.GetProperty("type").GetString();
 
-            string path = Path.Combine(basePath, "frontend", "views", view);
-
-            if (!File.Exists(path))
+            if (type == "login")
             {
-                webView21.CoreWebView2.ExecuteScriptAsync(
-                    "document.getElementById('right').innerHTML = '<h2>Vista no encontrada</h2>';"
-                );
-                return;
+                string user = data.RootElement.GetProperty("user").GetString();
+                string pass = data.RootElement.GetProperty("pass").GetString();
+
+                if (user == "admin" && pass == "1234")
+                {
+                    webView21.CoreWebView2.ExecuteScriptAsync("window.location.href = 'app.html';");
+                }
+                else
+                {
+                    webView21.CoreWebView2.ExecuteScriptAsync(
+                        "document.getElementById('error').innerText = 'Login incorrecto';"
+                    );
+                }
             }
+            else if (type == "view")
+            {
+                string view = data.RootElement.GetProperty("data").GetString();
 
-            string html = File.ReadAllText(path).Replace("`", "\\`");
+                var basePath = Directory.GetParent(Application.StartupPath)
+                    .Parent.Parent.Parent.FullName;
 
-            webView21.CoreWebView2.ExecuteScriptAsync(
-                $"document.getElementById('right').innerHTML = `{html}`;"
-            );
+                string path = Path.Combine(basePath, "frontend", "views", view);
 
-            string initFunction = Path.GetFileNameWithoutExtension(view) + "Init";
+                if (!File.Exists(path))
+                {
+                    webView21.CoreWebView2.ExecuteScriptAsync(
+                        "document.getElementById('right').innerHTML = '<h2>Vista no encontrada</h2>';"
+                    );
+                    return;
+                }
 
-            webView21.CoreWebView2.ExecuteScriptAsync($"{initFunction}()");
+                string html = File.ReadAllText(path).Replace("`", "\\`");
+
+                webView21.CoreWebView2.ExecuteScriptAsync(
+                    $"document.getElementById('right').innerHTML = `{html}`;"
+                );
+            }
         }
     }
 }

@@ -51,7 +51,7 @@
             ClientSize = new Size(874, 551);
             Controls.Add(webView21);
             Name = "Form1";
-            Text = "R-Manager - alpha 0.1";
+            Text = "R-Manager - V 0.1";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)webView21).EndInit();
             ResumeLayout(false);
