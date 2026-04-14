@@ -40,7 +40,7 @@
             webView21.Dock = DockStyle.Fill;
             webView21.Location = new Point(0, 0);
             webView21.Name = "webView21";
-            webView21.Size = new Size(874, 551);
+            webView21.Size = new Size(1008, 551);
             webView21.TabIndex = 0;
             webView21.ZoomFactor = 1D;
             // 
@@ -48,10 +48,11 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(874, 551);
+            BackColor = SystemColors.Desktop;
+            ClientSize = new Size(1008, 551);
             Controls.Add(webView21);
             Name = "Form1";
-            Text = "R-Manager - V 0.1";
+            Text = "R-Manager - v0.1";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)webView21).EndInit();
             ResumeLayout(false);

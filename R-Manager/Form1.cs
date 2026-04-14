@@ -6,7 +6,7 @@ namespace R_Manager
         {
             InitializeComponent();
 
-            this.MinimumSize = new Size(890, 590);
+            this.MinimumSize = new Size(1024, 590);
 
             this.Load += Form1_Load;
 
@@ -17,6 +17,12 @@ namespace R_Manager
         private async void Form1_Load(object sender, EventArgs e)
         {
             await webView21.EnsureCoreWebView2Async();
+
+            // SECURITY / DEVTOOLS LIMITS 
+            webView21.CoreWebView2.Settings.AreDevToolsEnabled = false;
+            webView21.CoreWebView2.Settings.AreDefaultContextMenusEnabled = false;
+            webView21.CoreWebView2.Settings.IsStatusBarEnabled = false;
+            webView21.CoreWebView2.Settings.AreBrowserAcceleratorKeysEnabled = false;
 
             webView21.CoreWebView2.WebMessageReceived += CoreWebView2_WebMessageReceived;
 
@@ -56,7 +62,9 @@ namespace R_Manager
 
                 if (user == "admin" && pass == "1234")
                 {
-                    webView21.CoreWebView2.ExecuteScriptAsync("window.location.href = 'app.html';");
+                    webView21.CoreWebView2.ExecuteScriptAsync(
+                        $"localStorage.setItem('user', '{user}'); window.location.href = 'app.html';"
+);
                 }
                 else
                 {
