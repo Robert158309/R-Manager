@@ -1,4 +1,6 @@
 ﻿declare const chrome: any;
+const nav = document.getElementById("navbar");
+const handle = document.getElementById("resize-handle");
 
 // LOGIN FUNCTION
 function login(): void {
@@ -59,4 +61,35 @@ window.addEventListener("DOMContentLoaded", (): void => {
 
 });
 
-//TO COMPILE:  tsc --watch
+//ON TESTING
+let isResizing = false;
+
+if (nav instanceof HTMLElement && handle instanceof HTMLElement) {
+
+    handle.addEventListener("mousedown", (e: MouseEvent): void => {
+        isResizing = true;
+        document.body.style.cursor = "ew-resize";
+    });
+
+    document.addEventListener("mousemove", (e: MouseEvent): void => {
+        if (!isResizing) return;
+
+        let newWidth = e.clientX;
+
+        const min = 200;
+        const max = 380;
+
+        if (newWidth < min) newWidth = min;
+        if (newWidth > max) newWidth = max;
+
+        nav.style.width = `${newWidth}px`;
+    });
+
+    document.addEventListener("mouseup", (): void => {
+        isResizing = false;
+        document.body.style.cursor = "default";
+    });
+
+}
+
+//TO COMPILE:  tsc -w

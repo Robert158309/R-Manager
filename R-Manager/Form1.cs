@@ -18,11 +18,13 @@ namespace R_Manager
         {
             await webView21.EnsureCoreWebView2Async();
 
+            /*
             // SECURITY / DEVTOOLS LIMITS 
             webView21.CoreWebView2.Settings.AreDevToolsEnabled = false;
             webView21.CoreWebView2.Settings.AreDefaultContextMenusEnabled = false;
             webView21.CoreWebView2.Settings.IsStatusBarEnabled = false;
             webView21.CoreWebView2.Settings.AreBrowserAcceleratorKeysEnabled = false;
+            */
 
             webView21.CoreWebView2.WebMessageReceived += CoreWebView2_WebMessageReceived;
 
@@ -97,5 +99,6 @@ namespace R_Manager
                 );
             }
         }
+
     }
 }
