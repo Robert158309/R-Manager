@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>R-Manager Docs</title>
+    </head>
+
+    <body>
+
+        <div id = "notice">
+          ⚠️ This project and its documentation are under active development. Content may change or be removed at any time, and several features described here are not yet fully implemented.
+        </div>
+
+        <h1>R-Manager Documentation</h1>
+
+        <section>
+
+          <h2>What is R-Manager?</h2>
+
+          <p>
+            R-Manager is a desktop hybrid application, focused on managing electronic repair workshops. It includes modules for inventory control, repair tracking, and task organization.
+          </p>
+
+        </section>
+
+        <section>
+
+          <h2>Overview</h2>
+
+          <p>
+            The application uses a web-based frontend (HTML, CSS, TypeScript),
+            while C# manages logic and communication via WebView2.
+          </p>
+
+        </section>
+
+        <section>
+
+          <h2>Architecture</h2>
+
+          <p>
+            R-Manager follows a two-layer hybrid architecture:
+          </p>
+
+          <ul>
+            <li>
+              <strong>C# Layer:</strong> Handles application logic, view loading, and system state management.
+            </li>
+            <li>
+              <strong>Frontend Layer:</strong> Provides the user interface using HTML, CSS, and TypeScript.
+            </li>
+          </ul>
+
+          <p>
+            Communication between both layers is achieved through WebView2 using message-based events (<code>postMessage</code>).
+          </p>
+
+        </section>
+
+        <section>
+
+          <h2>System Flow</h2>
+
+          <ol>
+            <li>User interacts with the UI (buttons, inputs, navigation)</li>
+            <li>Frontend sends a message using <code>postMessage</code> via WebView2</li>
+            <li>C# receives the message in the WebMessageReceived handler</li>
+            <li>Backend processes the event based on the message type</li>
+            <li>The UI is updated dynamically (e.g. view changes in #right container)</li>
+          </ol>
+
+        </section>
+
+        <section>
+
+          <h2>Design Decisions</h2>
+
+          <p>
+            The following design decisions were made to balance development speed, maintainability, and system flexibility:
+          </p>
+
+          <ul>
+            <li>
+              <strong>WebView2 over native UI:</strong> Chosen to leverage web technologies for UI development while maintaining a desktop runtime environment.
+            </li>
+
+            <li>
+              <strong>Dynamic view loading:</strong> HTML views are loaded at runtime to enable modularity and reduce the need for recompilation when UI changes.
+            </li>
+
+            <li>
+              <strong>TypeScript integration:</strong> Introduced to improve frontend code quality through static typing and early error detection.
+            </li>
+          </ul>
+
+        </section>
+
+        <section>
+
+          <h2>Project Structure</h2>
+
+          <pre>
+            R-Manager/
+             ├─ R-Manager.slnx
+             ├─ .gitignore
+             ├─ docs/                     (documentation site)
+             │
+             ├─ R-Manager/               (C# WinForms application)
+             │   ├─ Form1.cs
+             │   ├─ Form1.Designer.cs
+             │   ├─ Form1.resx
+             │   ├─ Program.cs
+             │   ├─ R-Manager.csproj
+             │   ├─ R-Manager.csproj.user
+             │   ├─ bin/
+             │   ├─ obj/
+             │   │
+             │   └─ frontend/            (Web UI layer)
+             │       ├─ login.html
+             │       ├─ app.html
+             │       ├─ new-user.html
+             │       ├─ restore-user.html
+             │       ├─ globalstyles.css
+             │       ├─ tsconfig.json
+             │       │
+             │       ├─ js/
+             │       │   └─ script.js
+             │       │
+             │       ├─ ts/
+             │       │   └─ script.ts
+             │       │
+             │       ├─ assets/
+             │       │   ├─ fonts/
+             │       │   └─ img/
+             │       │
+             │       └─ views/
+             │           ├─ dashboard.html
+             │           ├─ inventory.html
+             │           ├─ pending.html
+             │           ├─ record.html
+             │           └─ settings.html
+          </pre>
+
+        </section>
+
+        <section>
+
+          <h2>Notes</h2>
+
+          <p>
+            The frontend is tightly coupled to the C# runtime and operates exclusively through WebView2.
+            It is not designed for standalone deployment and depends on the host application for execution, state management, and communication.
+          </p>
+
+        </section>
+
+        <h1>CODE SECTION</h1>
+
+        <section>
+
+            <h2>WebView2 Conection</h2>
+            <p>This module starts de program execution, the minimum size of the window are 1024px x 590px, because the design can become distorted if it is reduced further. We also give the order that the window should always start maximized.</p>
+            <pre> <code> 
+                public Form1()
+                {
+                    InitializeComponent();
+
+                    this.MinimumSize = new Size(1024, 590);
+
+                    this.Load += Form1_Load;
+
+                    this.WindowState = FormWindowState.Maximized;
+
+                }
+            </code> </pre>
+        </section>
+
+        <div>
+            <footer>R-Manager v0.1 © 2026 Roberto Monzón • All rights reserved • Powered by caffeine & questionable decisions</footer>
+        </div> 
+
+    </body>
+
+</html>

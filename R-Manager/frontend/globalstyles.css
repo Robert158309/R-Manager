@@ -4,12 +4,12 @@
 /*FONTS IMPORTS*/
 @font-face {
     font-family: 'Inter';
-    src: url('../fonts/Inter-VariableFont_opsz,wght') format('truetype');
+    src: url('assets/fonts/Inter-VariableFont_opsz,wght') format('truetype');
 }
 
 @font-face {
     font-family: 'Inter';
-    src: url('../fonts/Inter-Italic-VariableFont_opsz,wght') format('truetype');
+    src: url('assets/fonts/Inter-Italic-VariableFont_opsz,wght') format('truetype');
     font-style: italic;
 }
 
