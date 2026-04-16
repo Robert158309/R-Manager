@@ -76,7 +76,7 @@ if (nav instanceof HTMLElement && handle instanceof HTMLElement) {
 
         let newWidth = e.clientX;
 
-        const min = 200;
+        const min = 220;
         const max = 380;
 
         if (newWidth < min) newWidth = min;

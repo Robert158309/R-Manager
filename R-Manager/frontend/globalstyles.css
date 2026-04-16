@@ -4,13 +4,17 @@
 /*FONTS IMPORTS*/
 @font-face {
     font-family: 'Inter';
-    src: url('assets/fonts/Inter-VariableFont_opsz,wght') format('truetype');
+    src: url('assets/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Inter';
-    src: url('assets/fonts/Inter-Italic-VariableFont_opsz,wght') format('truetype');
+    src: url('assets/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
     font-style: italic;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 /*LOGIN STYLES*/

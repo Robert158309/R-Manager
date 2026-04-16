@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 
-<html lang="en">
+<html lang = "en">
 
     <head>
         <meta charset="utf-8">
@@ -22,7 +22,7 @@
           <h2>What is R-Manager?</h2>
 
           <p>
-            R-Manager is a desktop hybrid application, focused on managing electronic repair workshops. It includes modules for inventory control, repair tracking, and task organization.
+            R-Manager is a desktop hybrid application, focused on managing electronic repair workshops. It includes modules for inventory control, repair tracking, and task management.
           </p>
 
         </section>
@@ -163,6 +163,7 @@
         <section>
 
             <h2>WebView2 Conection</h2>
+
             <p>This module starts de program execution, the minimum size of the window are 1024px x 590px, because the design can become distorted if it is reduced further. We also give the order that the window should always start maximized.</p>
             
             <pre> <code> 
@@ -177,6 +178,41 @@
                     this.WindowState = FormWindowState.Maximized;
 
                 }
+            </code> </pre>
+
+        </section>
+
+        <section>
+          
+            <h2>Form Load</h2>
+
+            <p>This module runs when the form loads and initializes WebView2 asynchronously to ensure the browser engine is ready before loading any content. It can optionally apply security settings such as disabling developer tools, context menus, and shortcut keys to limit user interaction with internal features. Then, it sets up an event to allow communication between the frontend in JavaScript and the backend in C#, enabling data exchange. After that, it dynamically builds the path to the main HTML file, which is the login page, and loads it into the WebView. Finally, it applies additional configuration to the browser environment.
+            </p>
+
+            <pre> <code>
+              private async void Form1_Load(object sender, EventArgs e)
+              {
+                  await webView21.EnsureCoreWebView2Async();
+
+                  /*
+                  // SECURITY / DEVTOOLS LIMITS 
+                  webView21.CoreWebView2.Settings.AreDevToolsEnabled = false;
+                  webView21.CoreWebView2.Settings.AreDefaultContextMenusEnabled = false;
+                  webView21.CoreWebView2.Settings.IsStatusBarEnabled = false;
+                  webView21.CoreWebView2.Settings.AreBrowserAcceleratorKeysEnabled = false;
+                  */
+
+                  webView21.CoreWebView2.WebMessageReceived += CoreWebView2_WebMessageReceived;
+
+                  var basePath = Directory.GetParent(Application.StartupPath)
+                      .Parent.Parent.Parent.FullName;
+
+                  var path = Path.Combine(basePath, "frontend", "login.html");
+
+                  webView21.CoreWebView2.Navigate(new Uri(path).AbsoluteUri);
+
+                  ConfigWebView();
+              }
             </code> </pre>
 
         </section>

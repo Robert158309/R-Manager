@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
             ((System.ComponentModel.ISupportInitialize)webView21).BeginInit();
             SuspendLayout();
@@ -51,6 +52,7 @@
             BackColor = SystemColors.Desktop;
             ClientSize = new Size(1008, 551);
             Controls.Add(webView21);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             Text = "R-Manager - v0.1";
             Load += Form1_Load;
