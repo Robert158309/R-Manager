@@ -31,7 +31,7 @@ namespace R_Manager
             var basePath = Directory.GetParent(Application.StartupPath)
                 .Parent.Parent.Parent.FullName;
 
-            var path = Path.Combine(basePath, "frontend", "login.html");
+            var path = Path.Combine(basePath, "frontend/auth", "login.html");
 
             webView21.CoreWebView2.Navigate(new Uri(path).AbsoluteUri);
 

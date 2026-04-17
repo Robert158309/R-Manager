@@ -1,0 +1,119 @@
+/*AUTH STYLES CSS*/
+@charset "UTF-8";
+
+/*FONTS IMPORTS*/
+@font-face {
+    font-family: 'Inter';
+    src: url('assets/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('assets/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+    font-style: italic;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(5, 16, 26);
+    color: rgb(220, 237, 236);
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overflow: hidden;
+}
+
+html, body {
+    overscroll-behavior: none;
+    margin: 0px;
+    height: 100%;
+}
+
+
+/*GLOBAL FORM CONTAINER*/
+.container {
+    background-color: rgb(30, 40, 70);
+    padding: 40px;
+    border-radius: 12px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    /*CENTER*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*EXTRA OPTIONS CONTAINER*/
+#optionscontainer p {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+#optionscontainer button {
+    font-family: 'Inter', sans-serif;
+    width: 85%;
+    padding: 8px;
+    margin-top: 0px;
+    border: none;
+    border-radius: 6px;
+    background-color: rgb(56, 107, 155);
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+    /*GLOBAL FORMS DESIGN*/
+    .container h1 {
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+        font-size: 32px;
+        color: rgb(220, 237, 236);
+    }
+
+    .container p {
+        font-family: 'Inter', sans-serif;
+        font-size: 14px;
+        opacity: 0.8;
+    }
+
+    .container input {
+        font-family: 'Inter', sans-serif;
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 6px;
+        outline: none;
+        background-color: rgb(5, 16, 26);
+        color: rgb(220, 237, 236);
+    }
+
+    .container button {
+        font-family: 'Inter', sans-serif;
+        width: 100%;
+        padding: 12px;
+        margin-top: 10px;
+        border: none;
+        border-radius: 6px;
+        background-color: rgb(56, 107, 155);
+        color: white;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .container button:hover {
+        background-color: rgb(80, 140, 200);
+    }
+
+#error {
+    color: rgb(255, 100, 100);
+    font-size: 12px;
+    margin-top: 10px;
+}
+
