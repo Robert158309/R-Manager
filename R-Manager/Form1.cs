@@ -2,6 +2,9 @@ namespace R_Manager
 {
     public partial class Form1 : Form
     {
+
+        private string basePath;
+
         public Form1()
         {
             InitializeComponent();
@@ -18,6 +21,9 @@ namespace R_Manager
         {
             await webView21.EnsureCoreWebView2Async();
 
+            basePath = Directory.GetParent(Application.StartupPath)
+        .Parent.Parent.Parent.FullName;
+
             /*
             // SECURITY / DEVTOOLS LIMITS 
             webView21.CoreWebView2.Settings.AreDevToolsEnabled = false;
@@ -27,9 +33,6 @@ namespace R_Manager
             */
 
             webView21.CoreWebView2.WebMessageReceived += CoreWebView2_WebMessageReceived;
-
-            var basePath = Directory.GetParent(Application.StartupPath)
-                .Parent.Parent.Parent.FullName;
 
             var path = Path.Combine(basePath, "frontend/auth", "login.html");
 
@@ -64,9 +67,10 @@ namespace R_Manager
 
                 if (user == "admin" && pass == "1234")
                 {
-                    webView21.CoreWebView2.ExecuteScriptAsync(
-                        $"localStorage.setItem('user', '{user}'); window.location.href = 'app.html';"
-);
+                    var appPath = Path.Combine(basePath, "frontend", "app.html");
+
+                    webView21.CoreWebView2.Navigate(new Uri(appPath).AbsoluteUri);
+
                 }
                 else
                 {
