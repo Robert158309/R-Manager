@@ -17,8 +17,8 @@
     box-sizing: border-box;
 }
 
-/*LOGIN STYLES*/
-.login-container {
+/*GLOBAL FORM CONTAINER*/
+.container {
     background-color: rgb(30, 40, 70);
     padding: 40px;
     border-radius: 12px;
@@ -32,20 +32,41 @@
     transform: translate(-50%, -50%);
 }
 
-    .login-container h1 {
+/*EXTRA OPTIONS CONTAINER*/
+#optionscontainer p {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+#optionscontainer button {
+    font-family: 'Inter', sans-serif;
+    width: 85%;
+    padding: 8px;
+    margin-top: 0px;
+    border: none;
+    border-radius: 6px;
+    background-color: rgb(56, 107, 155);
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+    /*GLOBAL FORMS DESIGN*/
+    .container h1 {
         font-family: 'Inter', sans-serif;
         margin: 0;
         font-size: 32px;
         color: rgb(220, 237, 236);
     }
 
-    .login-container p {
+    .container p {
         font-family: 'Inter', sans-serif;
         font-size: 14px;
         opacity: 0.8;
     }
 
-    .login-container input {
+    .container input {
         font-family: 'Inter', sans-serif;
         width: 100%;
         padding: 12px;
@@ -57,7 +78,7 @@
         color: rgb(220, 237, 236);
     }
 
-    .login-container button {
+    .container button {
         font-family: 'Inter', sans-serif;
         width: 100%;
         padding: 12px;
@@ -70,7 +91,7 @@
         transition: 0.2s;
     }
 
-    .login-container button:hover {
+    .container button:hover {
         background-color: rgb(80, 140, 200);
     }
 
@@ -80,7 +101,7 @@
     margin-top: 10px;
 }
 
-/*INDEX STYLES*/
+/*APP STYLES*/
 * {
     box-sizing: border-box;
 }
@@ -164,7 +185,7 @@ html, body {
     z-index: 999;
 }
 
-#user {
+#userview {
     background-color: rgb(58, 72, 114);
     padding: 7px;
     border: 3px solid rgb(5, 16, 26);
@@ -196,9 +217,7 @@ h2 {
     border: 2px solid rgb(5, 16, 26);
 }
 
-.btns {
-    transition: 0.3s ease;
-}
+.btns { transition: 0.3s ease; }
 
 .btns:hover {
     background-color: rgb(40, 50, 90);

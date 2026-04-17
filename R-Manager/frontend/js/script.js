@@ -50,7 +50,7 @@ if (nav instanceof HTMLElement && handle instanceof HTMLElement) {
         if (!isResizing)
             return;
         let newWidth = e.clientX;
-        const min = 200;
+        const min = 220;
         const max = 380;
         if (newWidth < min)
             newWidth = min;
@@ -63,4 +63,11 @@ if (nav instanceof HTMLElement && handle instanceof HTMLElement) {
         document.body.style.cursor = "default";
     });
 }
-//TO COMPILE:  tsc -w
+//LOGIN EXTRA FUNCTIONS
+function goTo(page) {
+    window.location.href = page;
+}
+function goLogin() {
+    window.location.href = "login.html";
+}
+//TO COMPILE:  npx tsc -w

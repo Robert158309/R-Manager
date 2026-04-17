@@ -92,4 +92,13 @@ if (nav instanceof HTMLElement && handle instanceof HTMLElement) {
 
 }
 
-//TO COMPILE:  tsc -w
+//LOGIN EXTRA FUNCTIONS
+function goTo(page: string): void {
+    window.location.href = page;
+}
+
+function goLogin(): void {
+    window.location.href = "login.html";
+}
+
+//TO COMPILE:  npx tsc -w

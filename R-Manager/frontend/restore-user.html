@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang = "es">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="globalstyles.css">
+		<title>Restore-user</title>
+	</head>
+
+	<body>
+
+		<div class = "container">
+
+			<h1>Recuperar Contraseña</h1>
+
+			<p>Rellene el formulario para recuperar su contraseña</p>
+
+			<form>
+
+				<input type = "text" id = "re_user" placeholder = "Usuario">
+
+				<input type = "email" id = "mail" placeholder = "Correo de Recuperación"> 
+
+				<button type="submit" id = "restorecode">Enviar Código</button>
+
+				<input type = "number" id = "rcode" placeholder = "Código Recuperación">
+
+				<button class="optionsbtns" type="button" onclick="goTo('restore-user-confirm.html')">
+				    Confirmar
+				</button> 
+
+			</form>
+
+			<button type="button" onclick="goLogin()">
+			    Volver al login
+			</button>
+
+		</div>
+
+		<script src="js/script.js"></script>
+
+	</body>
+
+</html>

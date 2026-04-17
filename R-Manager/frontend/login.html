@@ -13,17 +13,35 @@
 
     <body>
 
-        <div class="login-container">
+        <div class="container">
 
             <h1>R-Manager</h1>
             <p>Inicia sesión para continuar</p>
 
-            <input type = "text" id = "user" placeholder = "Usuario">
-            <input type = "password" id = "pass" placeholder = "Contraseña">
+            <form>
 
-            <button onclick="login()">Entrar</button>
+                <input type="text" id="user" placeholder="Usuario">
+                <input type="password" id="pass" placeholder="Contraseña">
 
-            <p id="error"></p>
+                <button type="submit" onclick="login()">Entrar</button>
+
+                <p id="error"></p>
+
+            </form>
+
+            <br>
+
+            <div id = "optionscontainer">
+                <p class = "opcionstext">¿Olvido su Contraseña?</p>
+                <button class="optionsbtns" type="button" onclick="goTo('restore-user.html')">
+                    Recuperar Contraseña
+                </button>
+
+                <p class = "opcionstext">¿Es nuevo usuario?</p>
+                <button class="optionsbtns" type="button" onclick="goTo('new-user.html')">
+                    Crear Usuario
+                </button>
+            </div>
 
         </div>
 
