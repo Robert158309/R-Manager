@@ -12,12 +12,6 @@ R-Manager is designed to manage electronic repair workshops, allowing control of
 - Frontend → HTML, CSS, TypeScript
 - Communication → postMessage
 
-## 📂 Project Structure
-
-- frontend/
-- R-Manager (C# project)
-- docs/
-
 ## ⚠️ Status
 
 This project is currently under development. Features may change or be incomplete.
