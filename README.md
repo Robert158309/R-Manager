@@ -2,20 +2,23 @@
 
 R-Manager is a desktop hybrid application built with C# and WebView2, using a web-based frontend (HTML, CSS, and TypeScript).
 
-## 📌 Description
+## Description
 
 R-Manager is designed to manage electronic repair workshops, allowing control of inventory, pending jobs, and service records.
 
-## 🧠 Architecture
+## Architecture
 
 - C# → backend controller (WinForms + WebView2)
 - Frontend → HTML, CSS, TypeScript
 - Communication → postMessage
 
-## ⚠️ Status
+## Status
 
 This project is currently under development. Features may change or be incomplete.
 
-## 🚀 Notes
+## Notes
 
 The frontend depends on the C# runtime and is not intended to run independently.
+
+## Icons
+A lot of app icons are from Tabler Icons
