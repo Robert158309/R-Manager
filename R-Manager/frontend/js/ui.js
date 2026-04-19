@@ -12,32 +12,40 @@ window.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
-/*NAVIGATION BUTTOMS ANIMATION*/
+/*NAVIGATION BUTTOMS ANIMATION
 window.addEventListener("DOMContentLoaded", () => {
+
     let isResizing = false;
+
     if (nav instanceof HTMLElement && handle instanceof HTMLElement) {
+
         handle.addEventListener("mousedown", () => {
             isResizing = true;
             document.body.style.cursor = "ew-resize";
         });
+
         document.addEventListener("mousemove", (e) => {
-            if (!isResizing)
-                return;
+            if (!isResizing) return;
+
             let newWidth = e.clientX;
-            const min = 220;
+
+            const min = 240;
             const max = 380;
-            if (newWidth < min)
-                newWidth = min;
-            if (newWidth > max)
-                newWidth = max;
+
+            if (newWidth < min) newWidth = min;
+            if (newWidth > max) newWidth = max;
+
             nav.style.width = `${newWidth}px`;
         });
+
         document.addEventListener("mouseup", () => {
             isResizing = false;
             document.body.style.cursor = "default";
         });
     }
+
 });
+*/
 // USER NAME DISPLAY
 window.addEventListener("DOMContentLoaded", () => {
     const user = localStorage.getItem("user");

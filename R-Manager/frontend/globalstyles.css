@@ -50,7 +50,7 @@ html, body {
 
 #navbar {
     position: relative;
-    width: 200px;
+    width: 230px;
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
@@ -78,6 +78,7 @@ html, body {
         background: rgb(40, 50, 90);
     }
 
+    /*
 #resize-zone {
     position: absolute;
     top: 0;
@@ -96,6 +97,7 @@ html, body {
     cursor: ew-resize;
     z-index: 999;
 }
+    */
 
 #userview {
     background-color: rgb(58, 72, 114);
@@ -118,15 +120,32 @@ h2 {
 }
 
 .btns {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
     width: 100%;
-    min-height: 100px;
+    max-height: 100px;
     padding: 20px;
     font-size: 20px;
     background-color: rgb(30, 40, 70);
     color: rgb(220, 237, 236);
     cursor: pointer;
     text-align: left;
-    border: 2px solid rgb(5, 16, 26);
+    border: 2px solid rgb(5, 16, 26); 
+}
+
+.imgicons {
+    width: 40px;
+    height: 40px;
+    margin-top: -5px;
+}
+
+img {
+    -webkit-user-drag: none;
+    user-select: none;   
 }
 
 .btns { transition: 0.3s ease; }

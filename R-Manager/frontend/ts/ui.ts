@@ -20,7 +20,7 @@ window.addEventListener("DOMContentLoaded", (): void => {
 
 });
 
-/*NAVIGATION BUTTOMS ANIMATION*/
+/*NAVIGATION BUTTOMS ANIMATION
 window.addEventListener("DOMContentLoaded", () => {
 
     let isResizing = false;
@@ -37,7 +37,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
             let newWidth = e.clientX;
 
-            const min = 220;
+            const min = 240;
             const max = 380;
 
             if (newWidth < min) newWidth = min;
@@ -53,6 +53,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+*/
 
 // USER NAME DISPLAY
 window.addEventListener("DOMContentLoaded", (): void => {
