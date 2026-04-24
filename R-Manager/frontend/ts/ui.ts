@@ -67,19 +67,29 @@ window.addEventListener("DOMContentLoaded", (): void => {
 
 });
 
+document.addEventListener("click", (e) => {
 
-/*MODAL FORM LOGIC
-chrome.webview.postMessage({
-    type: "modal",
-    data: "newPending.html"
+    const btn = (e.target as HTMLElement).closest("button");
+    if (!btn) return;
+
+    const action = btn.getAttribute("data-action");
+    const target = btn.getAttribute("data-target");
+
+    if (action === "new") {
+
+        if (target === "pending") {
+                postMessage({ type: "openModal", data: "new-oncourse.html" })
+        }
+
+        if (target === "inventory") {
+                postMessage({ type: "openModal", data: "new-inventory.html" })
+        }
+
+    }
+
 });
 
-function closeModal(): void {
-    const modal = document.getElementById("modal") as HTMLElement;
-    modal.classList.add("hidden");
-}
-
-// detectar botones dinámicos
+/*MODAL FORM LOGIC
 document.addEventListener("click", (e) => {
 
     const target = e.target as HTMLElement;

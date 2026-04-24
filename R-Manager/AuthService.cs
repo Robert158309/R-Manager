@@ -5,7 +5,7 @@
         public bool Login(string user, string pass)
         {
             //FUTURE: LOGIN CONECTION TO DB
-            return user == "admin" && pass == "1234";
+            return user == "admin" && pass == "12345";
         }
     }
 }

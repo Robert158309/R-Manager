@@ -420,9 +420,8 @@ footer {
     }
 
 /*-------------------------------------------------------------------------*/
-    /*EN TESTEO*/
+    /*ON TESTING*/
 
-    /* 🔥 FONDO OSCURO (bloquea todo) */
 .modal {
     position: fixed;
     top: 0;
@@ -438,12 +437,10 @@ footer {
     z-index: 9999;
 }
 
-/* oculto */
 .hidden {
     display: none;
 }
 
-/* 🧱 CAJITA DEL MODAL */
 .modal-content {
     background: #1e1e1e;
     padding: 20px;
@@ -454,28 +451,24 @@ footer {
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
-/* título */
 .modals h2 {
     text-align: center;
     margin-bottom: 15px;
     color: white;
 }
 
-/* cada campo */
 .sub-modals {
     margin-bottom: 12px;
     display: flex;
     flex-direction: column;
 }
 
-/* textos */
 .sub-modals h3 {
     margin-bottom: 5px;
     font-size: 14px;
     color: #ccc;
 }
 
-/* inputs */
 .m-inputs {
     padding: 8px;
     border: none;
@@ -486,12 +479,10 @@ footer {
     color: white;
 }
 
-/* focus bonito 😎 */
 .m-inputs:focus {
     border: 1px solid #4da6ff;
 }
 
-/* botones (si los agregas luego) */
 .modal-buttons {
     display: flex;
     justify-content: space-between;
@@ -505,13 +496,11 @@ footer {
     cursor: pointer;
 }
 
-/* aceptar */
 .btn-save {
     background: #4da6ff;
     color: white;
 }
 
-/* cancelar */
 .btn-cancel {
     background: #555;
     color: white;

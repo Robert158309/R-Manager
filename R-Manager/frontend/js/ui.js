@@ -54,18 +54,22 @@ window.addEventListener("DOMContentLoaded", () => {
         nameElement.textContent = user;
     }
 });
-/*MODAL FORM LOGIC
-chrome.webview.postMessage({
-    type: "modal",
-    data: "newPending.html"
+document.addEventListener("click", (e) => {
+    const btn = e.target.closest("button");
+    if (!btn)
+        return;
+    const action = btn.getAttribute("data-action");
+    const target = btn.getAttribute("data-target");
+    if (action === "new") {
+        if (target === "pending") {
+            postMessage({ type: "openModal", data: "new-oncourse.html" });
+        }
+        if (target === "inventory") {
+            postMessage({ type: "openModal", data: "new-inventory.html" });
+        }
+    }
 });
-
-function closeModal(): void {
-    const modal = document.getElementById("modal") as HTMLElement;
-    modal.classList.add("hidden");
-}
-
-// detectar botones dinámicos
+/*MODAL FORM LOGIC
 document.addEventListener("click", (e) => {
 
     const target = e.target as HTMLElement;

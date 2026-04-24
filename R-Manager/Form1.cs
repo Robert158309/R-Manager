@@ -30,6 +30,12 @@ namespace R_Manager
 
             navigationService.LoadLogin(webView21);
 
+             // SECURITY / DEVTOOLS LIMITS 
+             webView21.CoreWebView2.Settings.AreDevToolsEnabled = false; 
+             webView21.CoreWebView2.Settings.AreDefaultContextMenusEnabled = false; 
+             webView21.CoreWebView2.Settings.IsStatusBarEnabled = false; 
+             webView21.CoreWebView2.Settings.AreBrowserAcceleratorKeysEnabled = false;
+
             ConfigWebView();
         }
 
@@ -69,6 +75,18 @@ namespace R_Manager
             {
                 string view = data.RootElement.GetProperty("data").GetString();
                 navigationService.LoadView(webView21, view);
+            }
+            else if (type == "openModal")
+            {
+                string view = data.RootElement.GetProperty("data").GetString();
+
+                string path = Path.Combine(basePath, "frontend", "views", "modals", view);
+                string html = File.ReadAllText(path).Replace("`", "\\`");
+
+                webView21.CoreWebView2.ExecuteScriptAsync(
+                    $"document.getElementById('modal-content').innerHTML = `{html}`;" +
+                    "document.getElementById('modal').classList.remove('hidden');"
+                );
             }
         }
     }
