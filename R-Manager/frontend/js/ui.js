@@ -1,51 +1,21 @@
 "use strict";
 const nav = document.getElementById("navbar");
-const handle = document.getElementById("resize-handle");
 // NAVIGATION BUTTONS INIT
-window.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".btns").forEach((btn) => {
-        btn.addEventListener("click", () => {
-            const view = btn.dataset.view;
-            if (view) {
-                loadView(view);
-            }
-        });
-    });
-});
-/*NAVIGATION BUTTOMS ANIMATION
-window.addEventListener("DOMContentLoaded", () => {
-
-    let isResizing = false;
-
-    if (nav instanceof HTMLElement && handle instanceof HTMLElement) {
-
-        handle.addEventListener("mousedown", () => {
-            isResizing = true;
-            document.body.style.cursor = "ew-resize";
-        });
-
-        document.addEventListener("mousemove", (e) => {
-            if (!isResizing) return;
-
-            let newWidth = e.clientX;
-
-            const min = 240;
-            const max = 380;
-
-            if (newWidth < min) newWidth = min;
-            if (newWidth > max) newWidth = max;
-
-            nav.style.width = `${newWidth}px`;
-        });
-
-        document.addEventListener("mouseup", () => {
-            isResizing = false;
-            document.body.style.cursor = "default";
-        });
+window.addEventListener("click", (e) => {
+    const target = e.target;
+    // NAV BUTTONS
+    if (target.classList.contains("btns")) {
+        const view = target.dataset.view;
+        if (view)
+            loadView(view);
     }
-
+    // FORM BUTTONS
+    if (target.classList.contains("crudbtns")) {
+        const view = target.dataset.view;
+        if (view)
+            openForm(view);
+    }
 });
-*/
 // USER NAME DISPLAY
 window.addEventListener("DOMContentLoaded", () => {
     const user = localStorage.getItem("user");
@@ -54,61 +24,3 @@ window.addEventListener("DOMContentLoaded", () => {
         nameElement.textContent = user;
     }
 });
-document.addEventListener("click", (e) => {
-    const btn = e.target.closest("button");
-    if (!btn)
-        return;
-    const action = btn.getAttribute("data-action");
-    const target = btn.getAttribute("data-target");
-    if (action === "new") {
-        if (target === "pending") {
-            postMessage({ type: "openModal", data: "new-oncourse.html" });
-        }
-        if (target === "inventory") {
-            postMessage({ type: "openModal", data: "new-inventory.html" });
-        }
-    }
-});
-/*MODAL FORM LOGIC
-document.addEventListener("click", (e) => {
-
-    const target = e.target as HTMLElement;
-    const btn = target.closest("button");
-
-    if (!btn) return;
-
-    console.log("CLICK:", btn.id);
-
-});
-
-function saveInventory(): void {
-
-    const nombre = (document.getElementById("I_name") as HTMLInputElement).value;
-    const desc = (document.getElementById("I_des") as HTMLInputElement).value;
-    const count = (document.getElementById("I_count") as HTMLInputElement).value;
-    const price = (document.getElementById("I_price") as HTMLInputElement).value;
-
-    chrome.webview.postMessage({
-        type: "newInventory",
-        data: { nombre, desc, count, price }
-    });
-
-    closeModal();
-}
-
-function savePending(): void {
-
-    const nombre = (document.getElementById("C_name") as HTMLInputElement).value;
-    const dispositivo = (document.getElementById("C_device") as HTMLInputElement).value;
-    const modelo = (document.getElementById("C_model") as HTMLInputElement).value;
-    const resumen = (document.getElementById("C_summary") as HTMLTextAreaElement).value;
-    const repuestos = (document.getElementById("C_parts") as HTMLTextAreaElement).value;
-    const precio = (document.getElementById("C_price") as HTMLInputElement).value;
-
-    chrome.webview.postMessage({
-        type: "newPending",
-        data: { nombre, dispositivo, modelo, resumen, repuestos, precio }
-    });
-
-    closeModal();
-} */ 

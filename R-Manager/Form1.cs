@@ -76,17 +76,10 @@ namespace R_Manager
                 string view = data.RootElement.GetProperty("data").GetString();
                 navigationService.LoadView(webView21, view);
             }
-            else if (type == "openModal")
+            else if (type == "form")
             {
                 string view = data.RootElement.GetProperty("data").GetString();
-
-                string path = Path.Combine(basePath, "frontend", "views", "modals", view);
-                string html = File.ReadAllText(path).Replace("`", "\\`");
-
-                webView21.CoreWebView2.ExecuteScriptAsync(
-                    $"document.getElementById('modal-content').innerHTML = `{html}`;" +
-                    "document.getElementById('modal').classList.remove('hidden');"
-                );
+                navigationService.LoadForm(webView21, view);
             }
         }
     }

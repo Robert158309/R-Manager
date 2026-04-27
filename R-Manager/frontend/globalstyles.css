@@ -57,7 +57,6 @@ html, body {
     overflow-y: auto;
     overflow-x: hidden;
     background-color: rgb(5, 16, 26);
-    margin-bottom: 50px;
 }
 
     #navbar::-webkit-scrollbar {
@@ -166,7 +165,6 @@ img {
     justify-content: flex-start;
     background-color: rgb(5, 16, 26);
     flex-wrap: wrap;
-    padding-bottom: 48px;
     height: 100%;
 }
 
@@ -203,24 +201,8 @@ img {
     color: rgb(220, 237, 236);
 }
 
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    padding: 14px;
-    justify-content: center;
-    background-color: rgb(6, 28, 47);
-    color: rgb(220, 237, 236);
-}
-
 .view {
     width: 100%;
-    margin: 0;
     padding: 30px;
     border: 3px solid rgb(5, 16, 26);
     border-radius: 0 14px 14px 0;

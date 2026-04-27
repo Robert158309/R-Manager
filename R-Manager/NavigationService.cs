@@ -41,5 +41,25 @@ namespace R_Manager
                 $"document.getElementById('right').innerHTML = `{html}`;"
             );
         }
+
+        public void LoadForm(WebView2 webView, string view) {
+
+            string path = Path.Combine(basePath, "frontend", "views", view);
+
+            if (!File.Exists(path))
+            {
+                webView.CoreWebView2.ExecuteScriptAsync(
+                    "document.getElementById('right').innerHTML = '<h2>Vista no encontrada</h2>';"
+                );
+                return;
+            }
+
+            string html = File.ReadAllText(path).Replace("`", "\\`");
+
+            webView.CoreWebView2.ExecuteScriptAsync(
+                $"document.getElementById('right').innerHTML = `{html}`;"
+            );
+        }
+
     }
 }
