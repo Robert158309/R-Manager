@@ -54,14 +54,52 @@ a, .btns_search {
         transform: scale(1.2);
     }
 
-/*CRUD SUBCONTAINER*/
-.CRUDsubContainer {
-    width: 100%;
+/*------------------------------------------------*/
+.formcontainer {
+    margin: 10% 0 10% 0;
+}
+
+.formcontainer form {
+    width: 60%;
     display: flex;
-    gap: 80px;
     flex-wrap: wrap;
+    gap: 20px;
     justify-content: center;
-    padding: 30px;
+    padding: 20px;
+    margin: 0 auto 0 auto;
     background-color: rgb(10, 21, 33);
-    margin: 0;
+}
+
+.formcontainer h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 28px;
+}
+
+.formislands {
+    flex: 1 1 300px;
+    border-left: 5px solid rgb(91, 244, 255);
+}
+
+.formislands h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+}
+
+.btnssubcontainer {
+    flex: 1 1 300px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin: 20px 0 0 0;   
+}
+
+.formbtn {
+    background-color: rgb(52, 203, 110);
+    max-width: 250px;
+    padding: 30px;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    color: rgb(228, 220, 220);
+    border-radius: 10px;
 }
