@@ -30,12 +30,13 @@ namespace R_Manager
 
             navigationService.LoadLogin(webView21);
 
+            /*
              // SECURITY / DEVTOOLS LIMITS 
              webView21.CoreWebView2.Settings.AreDevToolsEnabled = false; 
              webView21.CoreWebView2.Settings.AreDefaultContextMenusEnabled = false; 
              webView21.CoreWebView2.Settings.IsStatusBarEnabled = false; 
              webView21.CoreWebView2.Settings.AreBrowserAcceleratorKeysEnabled = false;
-
+            */
             ConfigWebView();
         }
 

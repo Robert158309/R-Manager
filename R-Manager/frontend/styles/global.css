@@ -1,0 +1,19 @@
+﻿@charset "UTF-8";
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(5, 16, 26);
+    color: rgb(220, 237, 236);
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+html, body {
+    overscroll-behavior: none;
+    margin: 0px;
+    height: 100%;
+}

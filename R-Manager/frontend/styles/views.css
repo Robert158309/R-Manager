@@ -1,0 +1,128 @@
+﻿@charset "UTF-8";
+
+/*SUBCONTAINER*/
+.subContainer {
+    width: 100%;
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 30px;
+    background-color: rgb(10, 21, 33);
+    margin: 0;
+}
+
+.crudbtns {
+        font-family: 'Inter', sans-serif;
+        flex: 1 1 250px;
+        max-width: 250px;
+        padding: 5px;
+        margin-top: 30px;
+        border-radius: 10px;
+        background-color: rgb(52, 203, 110);
+        color: rgb(228, 220, 220);
+    }
+
+    .crudbtns h2 {
+        font-size: 20px;
+    }
+
+    .crudbtns { transition: 0.3s ease; }
+
+    .crudbtns:hover {
+        background-color: rgb(71, 172, 141);
+    }
+
+/*GLOBAL CARDS*/
+.card {
+    font-family: 'Inter', sans-serif;
+    flex: 1 1 250px;
+    max-width: 250px;
+    padding: 10px;
+    margin-top: 30px;
+    border-radius: 10px;
+    background-color: rgb(52, 185, 203);
+    border-top: 5px solid;
+    border-color: rgb(1, 1, 1);
+}
+
+/*DASHBOARD STYLES*/
+.dashboard {
+    background-color: rgb(10, 21, 33);
+}
+
+    .dashboard h1 {
+        flex-shrink: 0;
+        font-family: 'Inter', sans-serif;
+        font-size: 40px;
+        text-align: center;
+        color: rgb(220, 237, 236);
+    }
+
+/*INVENTORY STYLES*/
+.inventory {
+    background-color: rgb(10, 21, 33);
+}
+
+    .inventory h1 {
+        font-family: 'Inter', sans-serif;
+        font-size: 40px;
+        text-align: center;
+        color: rgb(220, 237, 236);
+    }
+
+/*PENDING STYLES*/
+.pending {
+    background-color: rgb(10, 21, 33);
+}
+
+    .pending h1 {
+        font-family: 'Inter', sans-serif;
+        font-size: 40px;
+        text-align: center;
+        color: rgb(220, 237, 236);
+    }
+
+/*RECORD STYLES*/
+.record {
+    background-color: rgb(10, 21, 33);
+}
+
+    .record h1 {
+        font-family: 'Inter', sans-serif;
+        font-size: 40px;
+        text-align: center;
+        color: rgb(220, 237, 236);
+        width: 100%;
+    }
+
+    .record h3 {
+        font-family: 'Inter', sans-serif;
+        font-size: 30px;
+        text-align: center;
+        color: rgb(220, 237, 236);
+        width: 100%;
+        border-top: 5px solid rgb(52, 185, 203);
+        padding: 10px;
+        margin-top: 40px;
+    }
+
+/*ABOUT STYLES*/
+.settings {
+    background-color: rgb(10, 21, 33);
+}
+
+    .settings h1 {
+        font-family: 'Inter', sans-serif;
+        font-size: 40px;
+        text-align: center;
+        color: rgb(220, 237, 236);
+    }
+
+    .settings p {
+        font-family: 'Inter', sans-serif;
+        font-size: 20px;
+        text-align: center;
+        width: 100%;
+        margin-top: 40px;
+    }

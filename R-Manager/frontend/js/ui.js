@@ -1,19 +1,23 @@
 "use strict";
 const nav = document.getElementById("navbar");
 // NAVIGATION BUTTONS INIT
-window.addEventListener("click", (e) => {
+document.addEventListener("click", (e) => {
     const target = e.target;
     // NAV BUTTONS
-    if (target.classList.contains("btns")) {
-        const view = target.dataset.view;
+    const navBtn = target.closest(".btns");
+    if (navBtn) {
+        const view = navBtn.dataset.view;
         if (view)
             loadView(view);
+        return;
     }
     // FORM BUTTONS
-    if (target.classList.contains("crudbtns")) {
-        const view = target.dataset.view;
+    const crudBtn = target.closest(".crudbtns");
+    if (crudBtn) {
+        const view = crudBtn.dataset.view;
         if (view)
             openForm(view);
+        return;
     }
 });
 // USER NAME DISPLAY

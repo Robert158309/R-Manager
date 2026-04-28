@@ -1,0 +1,12 @@
+﻿@charset "UTF-8";
+
+@font-face {
+    font-family: 'Inter';
+    src: url('assets/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('assets/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+    font-style: italic;
+}
