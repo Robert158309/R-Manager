@@ -1,48 +1,52 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Historial</title>
-</head>
-<body>
 
-	<div class="view record">
+<html lang = "es">
 
-		<h1>Estadísticas</h1>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Historial</title>
+    </head>
 
-		<div class = "subContainer">
+    <body>
 
-                <div class="card">
-                    <h2>Ayer</h2>
-                    <p id="pending"></p>
-                </div>
+        <div class="view record">
 
-                <div class="card">
-                    <h2>Semana Pasada</h2>
-                    <p id="process"></p>
-                </div>
+            <h1>Estadísticas</h1>
 
-                <div class="card">
-                    <h2>Mes Pasado</h2>
-                    <p id="moneycount"></p>
-                </div>
+            <div class = "subContainer">
+
+                    <div class="card">
+                        <h2>Ayer</h2>
+                        <p id="pending"></p>
+                    </div>
+
+                    <div class="card">
+                        <h2>Semana Pasada</h2>
+                        <p id="process"></p>
+                    </div>
+
+                    <div class="card">
+                        <h2>Mes Pasado</h2>
+                        <p id="moneycount"></p>
+                    </div>
+            </div>
+
+            <h3>Historial Completo</h3>
+
+            <div class = "searchbar_container">
+
+                    <input class = "search_bar" id = "R_input" type="search" name="q" placeholder="Buscar..." aria-label="Buscar en el sitio">
+                    <button class = "btns_search" id = "R_search" type="submit"><img src = "assets/img/search.svg"></button>
+
+            </div>
+
+            <table>
+
+            </table>
+
         </div>
 
-        <h3>Historial Completo</h3>
+    </body>
 
-        <div class = "searchbar_container">
-
-                <input class = "search_bar" id = "R_input" type="search" name="q" placeholder="Buscar..." aria-label="Buscar en el sitio">
-                <button class = "btns_search" id = "R_search" type="submit"><img src = "assets/img/search.svg"></button>
-
-        </div>
-
-        <table>
-
-        </table>
-
-	</div>
-
-</body>
 </html>

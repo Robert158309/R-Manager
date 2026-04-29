@@ -88,6 +88,10 @@ h2 {
     margin-top: -5px;
 }
 
+#reporticon {
+    filter: invert(1);
+}
+
 img {
     -webkit-user-drag: none;
     user-select: none;
@@ -133,13 +137,6 @@ img {
         #right::-webkit-scrollbar-thumb:hover {
             background: rgb(40, 50, 90);
         }
-
-#main-title {
-    font-family: 'Inter', sans-serif;
-    font-size: 50px;
-    text-align: center;
-    color: rgb(220, 237, 236);
-}
 
 #main-text {
     font-family: 'Inter', sans-serif;
