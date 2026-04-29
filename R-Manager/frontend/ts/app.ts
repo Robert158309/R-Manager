@@ -1,7 +1,17 @@
 declare const chrome: any;
 
-// LOAD VIEW FUNCTION (C# router)
+//NAVIGATION BUTTONS RECORD
+let viewStack: string[] = [];
+let currentView: string = "";
+
+// LOAD VIEW FUNCTION
 function loadView(view: string): void {
+
+    if (currentView) {
+        viewStack.push(currentView);
+    }
+
+    currentView = view;
 
     chrome.webview.postMessage({
         type: "view",
@@ -9,11 +19,31 @@ function loadView(view: string): void {
     });
 }
 
-//LOAD FORM FUNCTION (C# router)
+// LOAD FORM FUNCTION
 function openForm(view: string): void {
+
+    if (currentView) {
+        viewStack.push(currentView);
+    }
+
+    currentView = view;
 
     chrome.webview.postMessage({
         type: "form",
         data: view
     });
+}
+
+// GO BACK
+function goBack(): void {
+    const lastView = viewStack.pop();
+
+    if (lastView) {
+        currentView = lastView;
+
+        chrome.webview.postMessage({
+            type: "view",
+            data: lastView
+        });
+    }
 }

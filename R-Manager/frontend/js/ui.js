@@ -12,11 +12,17 @@ document.addEventListener("click", (e) => {
         return;
     }
     // FORM BUTTONS
-    const crudBtn = target.closest(".crudbtns");
-    if (crudBtn) {
-        const view = crudBtn.dataset.view;
+    const new_btn = target.closest(".btns_new");
+    if (new_btn) {
+        const view = new_btn.dataset.view;
         if (view)
             openForm(view);
+        return;
+    }
+    // CANCEL BUTTON
+    const cancelBtn = target.closest("#btnCancel");
+    if (cancelBtn) {
+        goBack();
         return;
     }
 });

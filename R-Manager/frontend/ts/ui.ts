@@ -14,10 +14,18 @@ document.addEventListener("click", (e) => {
     }
 
     // FORM BUTTONS
-    const crudBtn = target.closest(".crudbtns") as HTMLElement;
-    if (crudBtn) {
-        const view = crudBtn.dataset.view;
+    const new_btn = target.closest(".btns_new") as HTMLElement;
+    if (new_btn) {
+        const view = new_btn.dataset.view;
         if (view) openForm(view);
+        return;
+    }
+
+    // CANCEL BUTTON
+    const cancelBtn = target.closest("#btnCancel") as HTMLElement;
+
+    if (cancelBtn) {
+        goBack();
         return;
     }
 

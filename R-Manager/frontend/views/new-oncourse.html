@@ -11,43 +11,47 @@
         
         <div class = "formcontainer">
 
-            <h2>Nuevo Servicio</h2>
-
             <form>
+
+                <div class="formtitle">
+                    <h2>Nuevo Servicio</h2>
+                </div>
 
                 <div class="formislands">
                     <h3>Nombre del Cliente</h3>
-                    <input id="C_name" class="m-inputs">
+                    <input id="C_name" class="m-inputs" placeholder="ej.: Juan Pérez">
                 </div>
 
                 <div class="formislands">
                     <h3>Dispositivo</h3>
-                    <input id="C_device" class="m-inputs">
+                    <input id="C_device" class="m-inputs" placeholder="ej.: Microondas">
+                </div>
+
+                <div class="formislands">
+                    <h3>Marca</h3>
+                    <input id="C_brand" class="m-inputs" placeholder="ej.: Sumsang">
                 </div>
 
                 <div class="formislands">
                     <h3>Modelo</h3>
-                    <input id="C_model" class="m-inputs">
+                    <input id="C_model" class="m-inputs" placeholder="ej.: 5TSD53M223">
+                </div>
+                
+                <div class="formislands_bigtext">
+                    <h3>Problema</h3>
+                    <textarea id="C_summary" class="m-inputs" placeholder="ej.: No enciende, cable roto"></textarea>
                 </div>
 
-                <div class="formislands">
-                    <h3>Resumen</h3>
-                    <textarea id="C_summary" class="m-inputs"></textarea>
-                </div>
-
-                <div class="formislands">
-                    <h3>Repuestos Utilizados</h3>
-                    <textarea id="C_parts" class="m-inputs"></textarea>
-                </div>
-
-                <div class="formislands">
-                    <h3>Precio Final</h3>
-                    <input type="number" id="C_price" class="m-inputs">
+                <div class="checkisland">
+                    <label>
+                        <input type="checkbox" id="priority">
+                        Urgente
+                    </label>
                 </div>
 
                 <div class = "btnssubcontainer">
-                    <button type="button" id="btnSave" class="formbtn">Aceptar</button>
-                    <button type="button" id="btnCancel" class="formbtn">Cancelar</button>
+                    <button type="button" id="btnSave_C" class="formbtns">Aceptar</button>
+                    <button type="button" id="btnCancel" class="formbtns">Cancelar</button>
                 </div>
 
             </form>
